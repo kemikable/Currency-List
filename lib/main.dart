@@ -21,6 +21,7 @@ class List extends StatelessWidget {
           useMaterial3: true,
           appBarTheme: const AppBarTheme(
               backgroundColor: Colors.amber,
+              centerTitle: true,
               titleTextStyle: TextStyle(
                   color: Color.fromARGB(255, 11, 136, 246),
                   fontSize: 26,
@@ -37,36 +38,28 @@ class List extends StatelessWidget {
                   color: Colors.blue.withOpacity(0.6),
                   fontSize: 14,
                   fontStyle: FontStyle.italic))),
-      home: const MyHomePage(title: 'Crypto Currency List'),
+      home: const CryptoListScreen(title: 'Crypto Currency List'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class CryptoListScreen extends StatefulWidget {
+  const CryptoListScreen({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CryptoListScreen> createState() => _CryptoListScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      counter += 2;
-    });
-  }
-
+class _CryptoListScreenState extends State<CryptoListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(widget.title),
-        centerTitle: true,
+
         // leading: Icon(Icons.home),
       ),
 
@@ -90,12 +83,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const CryptoCoinScreen()));
+                },
               )),
+    );
+  }
+}
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add_rounded),
+class CryptoCoinScreen extends StatelessWidget {
+  const CryptoCoinScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Crypto Coin"),
       ),
     );
   }
