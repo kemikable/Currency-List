@@ -7,6 +7,7 @@ final darkTheme = ThemeData(
     ),
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
+        elevation: 0,
         backgroundColor: Colors.amber,
         centerTitle: true,
         titleTextStyle: TextStyle(
@@ -23,5 +24,5 @@ final darkTheme = ThemeData(
             fontWeight: FontWeight.w600),
         labelSmall: TextStyle(
             color: Colors.blue.withOpacity(0.6),
-            fontSize: 14,
+            fontSize: 18,
             fontStyle: FontStyle.italic)));
