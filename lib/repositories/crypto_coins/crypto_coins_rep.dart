@@ -1,9 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
-import 'package:list/repositories/crypto_coins/models/crypto_coin.dart';
 
-class CryptoCoinsRep {
+import 'package:list/repositories/crypto_coins/crypto_coins.dart';
+
+class CryptoCoinsRep implements AbstractCoinsRep {
+  CryptoCoinsRep({
+    required this.dio,
+  });
+
+  final Dio dio;
+
+  @override
   Future<List<CryptoCoin>> getCoinsList() async {
-    final response = await Dio().get(
+    final response = await dio.get(
         'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,TRX,MKR,LINK,SHIB,ATOM,XRP,SOL,USDC,ADA,DOGE,ETC,BNB,AVAX,TON,USDT,LTC,BCH,XMR&tsyms=USD');
     final data = response.data as Map<String, dynamic>;
 
