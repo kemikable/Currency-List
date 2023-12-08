@@ -14,13 +14,14 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final talker = TalkerFlutter.init();
-  GetIt.I.registerSingleton(talker);
-  GetIt.I<Talker>().debug('Talker started...');
 
   final app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  final talker = TalkerFlutter.init();
+  GetIt.I.registerSingleton(talker);
+  GetIt.I<Talker>().debug('Talker started...');
+
   talker.info(app.options.projectId);
 
   final dio = Dio();
