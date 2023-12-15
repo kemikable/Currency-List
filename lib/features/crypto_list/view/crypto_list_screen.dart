@@ -143,7 +143,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CryptoCurrenciesList'),
+        title: const Text('Crypto Currencies List'),
         actions: [
           IconButton(
             onPressed: () {
@@ -155,7 +155,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                 ),
               );
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.document_scanner_outlined,
             ),
           )

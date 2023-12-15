@@ -1,0 +1,8 @@
+keytool -genkey -v -keystore C:\Users\kemik\Desktop\Projects\Flutter\keys\keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+
+
+
+flutter build apk --split-per-abi
+
+
+flutter build windows

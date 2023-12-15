@@ -18,6 +18,8 @@ class CryptoCoinDetailsLoaded extends CryptoCoinDetailsState {
 
   @override
   List<Object?> get props => [coin];
+
+  get coinsList => null;
 }
 
 class CryptoCoinDetailsLoadingFailure extends CryptoCoinDetailsState {

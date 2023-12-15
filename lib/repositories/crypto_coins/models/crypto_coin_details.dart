@@ -49,6 +49,10 @@ class CryptoCoinDetail extends Equatable {
   factory CryptoCoinDetail.fromJson(Map<String, dynamic> json) =>
       _$CryptoCoinDetailFromJson(json);
 
+  get high24Hour => null;
+
+  get low24Hour => null;
+
   Map<String, dynamic> toJson() => _$CryptoCoinDetailToJson(this);
 
   static int _dateTimeToJson(DateTime time) => time.millisecondsSinceEpoch;
